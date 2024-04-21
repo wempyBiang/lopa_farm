@@ -1,0 +1,29 @@
+.infos{
+    margin-top: 2em;
+}
+
+.info{
+    width: 360px;
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.title-info{
+    font-size: 20px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+}
+
+.description-info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}

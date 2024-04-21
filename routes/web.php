@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BatchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('dashboard');
 });
+
+Route::get('/batch', [BatchController::class, 'show']);
+

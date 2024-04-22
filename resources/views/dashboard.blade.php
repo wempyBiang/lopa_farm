@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <div class="batchs">
+    <div class="buttons">
         <a  href="/batch" class="btn"> batch 1 </a>
         
         <a href="/batch" class="btn"> batch 2 </a>

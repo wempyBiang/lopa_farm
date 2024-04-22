@@ -48,7 +48,10 @@
         </div>
     </div>
 
-    <div class="butons">
-        
+    <div class="buttons">
+        <a href="/beri-pakan" class="btn">beri pakan</a>
+        <a href="/timbang" class="btn">timbang</a>
+        <a href="/panen" class="btn">panen</a>
+        <a href="/mati" class="btn">mati</a>
     </div>
 @endsection

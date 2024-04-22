@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BatchController;
+use App\Http\Controllers\MatiController;
+use App\Http\Controllers\PanenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,6 @@ Route::get('/', function () {
 
 Route::get('/batch', [BatchController::class, 'show']);
 
+Route::get("/panen", [PanenController::class, 'show']);
+
+Route::get("/mati", [MatiController::class, 'show']);

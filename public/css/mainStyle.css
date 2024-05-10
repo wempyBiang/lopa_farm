@@ -1,11 +1,24 @@
+/* Utitily class */
+.span-col-2 {
+    grid-column: span 2;
+}
+
 /* Extra small devices (phones, 600px and down) */
 *{
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .content {
     text-transform: capitalize;
     margin: 15px 15px 0 15px;
+    width: max(415px);
+
 }
 
 .title{

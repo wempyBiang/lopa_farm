@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('title')
-    Kandang 1
+    Batch {{{$id}}}
 @endsection
 
 @section('css')
@@ -10,11 +10,15 @@
 
 @section('content')
 
-    <form action="/panen" method="post">
+    <form action="/panen-{{{$id}}}" method="post">
         @csrf
         <div>
             <label for="jumlah">jumlah:</label>
             <input type="number" name="jumlah" id="jumlah"  placeholder="Jumlah Ayam Dipanen">
+        </div>
+        <div>
+            <label for="jumlah">keterangan:</label>
+            <input type="text" name="ket" id="ket"  placeholder="Kenterangan">
         </div>
         <button type="submit">Kirim</button>
     </form>

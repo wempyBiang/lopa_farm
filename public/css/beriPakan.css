@@ -1,0 +1,26 @@
+.info-pakan {
+    border: 1px solid black;
+    height: 300px;
+    overflow: scroll;
+}
+
+table {
+    width: 100%;
+}
+
+th, td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+form {
+    margin-top: 1.5em;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 50px;
+    font-size: 18px;
+}
+

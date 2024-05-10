@@ -5,11 +5,11 @@
 @endsection
 
 @section('title')
-    kandang 1
+    Batch {{{$id}}}
 @endsection 
 
 @section('content')
-<form action="/mati" method="post">
+<form action="/mati-{{{$id}}}" method="post">
     @csrf
     <div>
         <label for="jumlah">jumlah:</label>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    Batch {{{$batch->ke}}}
+    Batch {{{$ke}}}
 @endsection 
 
 @section('content')
@@ -30,7 +30,7 @@
         </table>
     </div>
 
-    <form action="/beri-pakan-{{{$batch->id}}}" method="post">
+    <form action="/beri-pakan-{{{$ke}}}" method="post">
         @csrf
         <p>Waktu</p>
         <div>
@@ -41,7 +41,7 @@
         </div>
 
         <label for="jmlPakan">Jumlah Pakan</label>
-        <input type="text" name="jmlPakan" id="jmlPakan">
+        <input type="number" step="0.01" name="jmlPakan" id="jmlPakan">
 
         <input type="submit" value="Kirim" class="span-col-2">
     </form>

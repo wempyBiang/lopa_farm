@@ -9,24 +9,24 @@ use Illuminate\Http\Request;
 
 class MatiController extends Controller
 {
-    public function show($id): View{
-
+    public function show($ke): View{
+        
         return view('mati',[
-            "id"=>$id
+            "ke"=>$ke
         ]);
     }
 
-    public function insertMati($id, Request $req) {
+    public function insertMati($ke, Request $req) {
         $mati = new MatiModel();
-        $batch = BatchModel::where("id", $id)->get()->first();
+        $batch = BatchModel::where("ke", $ke)->get()->first();
 
         $mati->jumlah = $req->jumlah;
-        $mati->batch_id = $id;
+        $mati->batch_id = $batch->id;
         $batch->jumlah = $batch->jumlah - $req->jumlah;
 
         $mati->save();
         $batch->save();
 
-        return redirect("/batch-$id");
+        return redirect("/batch-$ke");
     }
 }

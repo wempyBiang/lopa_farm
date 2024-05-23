@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('title')
-    Batch {{{$id}}}
+    Batch {{{$ke}}}
 @endsection
 
 @section('css')
@@ -10,7 +10,7 @@
 
 @section('content')
 
-    <form action="/panen-{{{$id}}}" method="post">
+    <form action="/panen-{{{$ke}}}" method="post">
         @csrf
         <div>
             <label for="jumlah">jumlah:</label>

@@ -49,9 +49,9 @@
     </div>
 
     <div class="buttons">
-        <a href="/beri-pakan-{{{$batch->id}}}" class="btn">beri pakan</a>
-        <a href="/timbang-{{{$batch->id}}}" class="btn">timbang</a>
-        <a href="/panen-{{{$batch->id}}}" class="btn">panen</a>
-        <a href="/mati-{{{$batch->id}}}" class="btn">mati</a>
+        <a href="/beri-pakan-{{{$batch->ke}}}" class="btn">beri pakan</a>
+        <a href="/timbang-{{{$batch->ke}}}" class="btn">timbang</a>
+        <a href="/panen-{{{$batch->ke}}}" class="btn">panen</a>
+        <a href="/mati-{{{$batch->ke}}}" class="btn">mati</a>
     </div>
 @endsection

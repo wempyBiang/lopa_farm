@@ -11,15 +11,14 @@ use Illuminate\Http\Request;
 
 class BatchController extends Controller
 {
-    public function show($id): View{
-        dd(date("Y-m-d"));
-        $batch = BatchModel::where("id", $id)->get()->first();
+    public function show($ke): View{
+        $batch = BatchModel::where("ke", $ke)->get()->first();
         $hari = (int) ((strtotime(date("Y-m-d")) - strtotime(date_format($batch->created_at, "Y-m-d"))) / 84600) + 1 ;
         $jml = $batch->jumlah;
-        $pakans = PakanModel::where("batch_id", $id)->get();
+        $pakans = PakanModel::where("batch_id", $batch->id)->get();
         $pakanKumulatif = 0;
 
-        $fcr = FCRModel::where("batch_id", $id)->get()->last();
+        $fcr = FCRModel::where("batch_id", $batch->id)->get()->last();
             
         foreach ($pakans as $pakan) {
             $pakanKumulatif = $pakanKumulatif + $pakan->pagi;

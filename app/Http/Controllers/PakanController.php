@@ -8,21 +8,20 @@ use Illuminate\Http\Request;
 
 class PakanController extends Controller
 {
-    public function show($batchId){
-        $batch = BatchModel::where("id", $batchId)->get()->first();
+    public function show($ke){
         $pakans = PakanModel::all();
 
         return view("beriPakan", [
-            "batch"=>$batch,
+            "ke"=>$ke,
             "pakans"=>$pakans
         ]);
     }
 
-    public function insertPakan($batchId, Request $req) {
+    public function insertPakan($ke, Request $req) {
         $waktu = $req->waktu;
         $jmlPakan = $req->jmlPakan;
 
-        $batch = BatchModel::where("id", $batchId)->get()->first();
+        $batch = BatchModel::where("ke", $ke)->get()->first();
         $hari = (int) ((strtotime(date("Y-m-d")) - strtotime(date_format($batch->created_at, "Y-m-d"))) / 84600) + 1 ;
 
         $waktu = $req->waktu;
@@ -32,7 +31,7 @@ class PakanController extends Controller
 
         if ($isPakanExist==0) {
             $pakan = new PakanModel();
-            $pakan->batch_id = $batchId;
+            $pakan->batch_id = $batch->id;
             $pakan->day = $hari;   
             
             if ($waktu == "pagi") {
@@ -59,10 +58,6 @@ class PakanController extends Controller
 
 
         return redirect()->back();
-
-
-
-        
         
     }
 }

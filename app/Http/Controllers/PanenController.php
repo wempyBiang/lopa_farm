@@ -9,17 +9,17 @@ use Illuminate\Http\Request;
 
 class PanenController extends Controller
 {
-    public function show($id): View {
+    public function show($ke): View {
         return view('panen',[
-            'id'=>$id
+            'ke'=>$ke
         ]);
     }
 
-    public function insertPanen($id, Request $req) {
+    public function insertPanen($ke, Request $req) {
         $panen = new PanenModel();
-        $batch = BatchModel::where("id", $id)->get()->first();
+        $batch = BatchModel::where("ke", $ke)->get()->first();
 
-        $panen->batch_id = $id;
+        $panen->batch_id = $batch->id;
         $panen->jumlah = $req->jumlah;
         $panen->keterangan = $req->ket;
 
@@ -28,6 +28,6 @@ class PanenController extends Controller
         $panen->save();
         $batch->save();
 
-        return redirect("/batch-$id");
+        return redirect("/batch-$ke");
     }
 }

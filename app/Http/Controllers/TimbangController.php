@@ -9,15 +9,15 @@ use Illuminate\Http\Request;
 
 class TimbangController extends Controller
 {
-    public function show($id) {
+    public function show($ke) {
         return view("timbang",[
-            "batchId"=>$id,
+            "ke"=>$ke,
         ]);
     }
 
-    public function insertTimbang($id, Request $req){
+    public function insertTimbang($ke, Request $req){
         $pakans = PakanModel::all();
-        $batch = BatchModel::where("id", $id)->get()->first();
+        $batch = BatchModel::where("ke", $ke)->get()->first();
         $kumulatifPakan = 0;
 
         foreach ($pakans as $pakan) {
@@ -59,12 +59,11 @@ class TimbangController extends Controller
         $beratRataRata = $totalBrt/$totalAyam;
 
         $fcr = new FCRModel();
-        $fcr->batch_id = $id;
+        $fcr->batch_id = $batch->id;
         $fcr->rata_rata = $beratRataRata;
-        $fcr->jml_ayam = $totalAyam;
         $fcr->fcr = $rataRataPakan/$beratRataRata;
         $fcr->save();
 
-        return redirect("/batch-$id");
+        return redirect("/batch-$ke");
     }
 }

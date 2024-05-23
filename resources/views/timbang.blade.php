@@ -5,11 +5,11 @@
 @endsection
 
 @section('title')
-    Batch {{{$batchId}}}
+    Batch {{{$ke}}}
 @endsection
 
 @section('content')
-    <form action="/timbang-{{{$batchId}}}" method="post">
+    <form action="/timbang-{{{$ke}}}" method="post">
         @csrf
         <p>Jumlah Ayam</p>
         <p>Berat</p>

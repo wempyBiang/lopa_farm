@@ -11,7 +11,7 @@
 @section('content')
     <div class="buttons">
         @foreach ($batchs as $batch)
-            <a href="/batch-{{{$batch->id}}}" class="btn"> batch {{{$batch->ke}}} </a>
+            <a href="/batch-{{{$batch->ke}}}" class="btn"> batch {{{$batch->ke}}} </a>
         @endforeach
         
         <a href="/tambah-batch" class="btn">tambah</a>
